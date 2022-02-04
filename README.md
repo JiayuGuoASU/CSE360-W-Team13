@@ -1,11 +1,9 @@
 # CSE360-W-Team13
+Started at Feb 4
+
+=======Team members======
 #Sreelekha Sreekantham
-Jiayu Guo Feb 4
-<<<<<<< HEAD
-
-#Boyang Song 02/04
-
-=======
+#Jiayu Guo 
 #Boyang Song
 #Ling Shan Tan
 #Tianyu Dong
