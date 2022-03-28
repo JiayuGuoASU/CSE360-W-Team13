@@ -35,7 +35,7 @@ public class HelloController {
     @FXML
     public void initialize() {
         ObservableList<String> items = FXCollections.observableArrayList (
-                "RUBY", "APPLE", "VISTA", "TWITTER");
+                "Pizza", "Handmade Noodles", "Sushi", "Garlic Butter Salmon");
         MENU.setItems(items);
         MENU.setCellFactory(param -> new ListCell<String>() {
             private ImageView imageView = new ImageView();
