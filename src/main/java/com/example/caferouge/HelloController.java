@@ -1,5 +1,7 @@
 package com.example.caferouge;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,8 +10,15 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseButton;
 
 public class HelloController {
+    private class NoticeListItemChangeListener implements ChangeListener<Object> {
+        @Override
+        public void changed(ObservableValue<? extends Object> observable, Object oldValue, Object newValue) {
+            System.out.println(newValue);
+        }
+    }
     private final Image IMAGE_RUBY  = new Image("https://upload.wikimedia.org/wikipedia/commons/f/f1/Ruby_logo_64x64.png");
     private final Image IMAGE_APPLE  = new Image("http://findicons.com/files/icons/832/social_and_web/64/apple.png");
     private final Image IMAGE_VISTA  = new Image("http://antaki.ca/bloom/img/windows_64x64.png");
@@ -47,8 +56,15 @@ public class HelloController {
                         imageView.setImage(listOfImages[3]);
                     setText(name);
                     setGraphic(imageView);
+                    setOnMouseClicked(mouseClickedEvent -> {
+                        if (mouseClickedEvent.getButton().equals(MouseButton.PRIMARY) && mouseClickedEvent.getClickCount() == 2) {
+                            System.out.println(name);
+                        }
+                    });
                 }
             }
         });
+//        MENU.getSelectionModel().selectedItemProperty().addListener(new NoticeListItemChangeListener());
     }
+
 }
