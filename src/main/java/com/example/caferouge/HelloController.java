@@ -11,6 +11,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class HelloController {
     private class NoticeListItemChangeListener implements ChangeListener<Object> {
@@ -24,6 +27,7 @@ public class HelloController {
     private final Image IMAGE_VISTA  = new Image("http://antaki.ca/bloom/img/windows_64x64.png");
     private final Image IMAGE_TWITTER = new Image("http://files.softicons.com/download/social-media-icons/fresh-social-media-icons-by-creative-nerds/png/64x64/twitter-bird.png");
     private Image[] listOfImages = {IMAGE_RUBY, IMAGE_APPLE, IMAGE_VISTA, IMAGE_TWITTER};
+    private Stage stage;
     @FXML
     private Label welcomeText;
     @FXML
@@ -40,13 +44,13 @@ public class HelloController {
         MENU.setCellFactory(param -> new ListCell<String>() {
             private ImageView imageView = new ImageView();
             @Override
-            public void updateItem(String name, boolean empty) {
+            public void updateItem(String name, boolean empty){
                 super.updateItem(name, empty);
                 if (empty) {
                     setText(null);
                     setGraphic(null);
                 } else {
-                    if(name.equals("RUBY"))
+                    if(name.equals("Pizza"))
                         imageView.setImage(listOfImages[0]);
                     else if(name.equals("APPLE"))
                         imageView.setImage(listOfImages[1]);
@@ -58,6 +62,7 @@ public class HelloController {
                     setGraphic(imageView);
                     setOnMouseClicked(mouseClickedEvent -> {
                         if (mouseClickedEvent.getButton().equals(MouseButton.PRIMARY) && mouseClickedEvent.getClickCount() == 2) {
+                            showDishMenu();
                             System.out.println(name);
                         }
                     });
@@ -66,5 +71,18 @@ public class HelloController {
         });
 //        MENU.getSelectionModel().selectedItemProperty().addListener(new NoticeListItemChangeListener());
     }
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
+    @FXML
+    public void showDishMenu(){
+        DishDetail dd=new DishDetail(this.stage);
+        this.stage.hide();
+        try {
+//            (Stage)rootPane.getScene().getWindow()).close();
+            dd.showWindow();
+        } catch (Exception e){
 
+        }
+    }
 }

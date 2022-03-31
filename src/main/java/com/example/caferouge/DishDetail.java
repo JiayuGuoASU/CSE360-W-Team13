@@ -7,11 +7,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class DishDetail extends Application {
-
+    Stage stage = new Stage();
+    private Stage parentStage;
     public static void main(String[] args) {
         launch(args);
     }
-
+    public DishDetail(Stage parentStage){
+        this.parentStage=parentStage;
+    }
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("DishDetail.fxml"));
@@ -21,5 +24,13 @@ public class DishDetail extends Application {
         primaryStage.setTitle("DishDetail");
         primaryStage.setScene(scene);
         primaryStage.show();
+        primaryStage.setOnCloseRequest(event -> {
+            System.out.println("Stage is closing");
+            this.parentStage.show();
+            // Save file
+        });
+    }
+    public void showWindow() throws IOException{
+        start(stage);
     }
 }
