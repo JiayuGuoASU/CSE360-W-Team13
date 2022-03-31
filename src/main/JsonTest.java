@@ -10,7 +10,7 @@ import java.io.OutputStreamWriter;
 
 public class JsonTest {
 
-    // 读取json文件
+    // read json file
     public static String readJsonFile(String fileName) {
         String jsonStr = "";
         try {
@@ -32,7 +32,7 @@ public class JsonTest {
             return null;
         }
     }
-
+    //write json file
     public static boolean writeJsonFile(Object jsonData, String fileName) {
         //String content = JSON.toJSONString(jsonData, SerializerFeature.PrettyFormat,
                 //SerializerFeature.WriteMapNullValue,
@@ -55,7 +55,7 @@ public class JsonTest {
         String path = JsonTest.class.getClassLoader().getResource("database.json").getPath();
         String s = readJsonFile(path);
         JSONObject jobj = JSON.parseObject(s);
-        JSONArray user = jobj.getJSONArray("DATABASES");// 构建JSONArray数组
+        JSONArray user = jobj.getJSONArray("DATABASES");
 
         //? ADDING OR Wtite to json
         JSONObject js_new = new JSONObject();
