@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class DishDetail extends Application {
     Stage stage = new Stage();
-    private Stage parentStage;
+    public Stage parentStage;
     public static void main(String[] args) {
         launch(args);
     }
@@ -29,6 +29,8 @@ public class DishDetail extends Application {
             this.parentStage.show();
             // Save file
         });
+        DishDetailController newProjectController = fxmlLoader.getController();
+        newProjectController.setStage(this);
     }
     public void showWindow() throws IOException{
         start(stage);
