@@ -34,6 +34,17 @@ public class HelloController {
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
+        showCheckout();
+    }
+
+    public void showCheckout(){
+        cartPage cart =new cartPage(this.app.stage);
+        this.app.stage.hide();
+        try {
+            cart.showWindow();
+        } catch (Exception e){
+
+        }
     }
     @FXML
     public void initialize() {

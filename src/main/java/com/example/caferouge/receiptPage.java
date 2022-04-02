@@ -12,7 +12,10 @@ public class receiptPage extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
+    Stage parentStage;
+    public receiptPage(Stage parentStage){
+        this.parentStage=parentStage;
+    }
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("receipt.fxml"));
@@ -21,7 +24,7 @@ public class receiptPage extends Application {
         stage.setScene(scene);
         stage.show();
         receiptController newProjectController = fxmlLoader.getController();
-        newProjectController.setStage(stage);
+        newProjectController.setStage(this.stage);
     }
     public void showWindow() throws IOException{
         start(stage);

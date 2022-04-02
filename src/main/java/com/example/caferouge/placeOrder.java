@@ -9,10 +9,13 @@ import java.io.IOException;
 
 public class placeOrder extends Application {
     Stage stage = new Stage();
+    private Stage parentStage;
     public static void main(String[] args) {
         launch(args);
     }
-
+    public placeOrder(Stage parentStage){
+        this.parentStage=parentStage;
+    }
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("placeOrder.fxml"));

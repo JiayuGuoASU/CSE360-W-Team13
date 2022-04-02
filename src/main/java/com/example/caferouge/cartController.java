@@ -20,8 +20,8 @@ public class cartController  {
     }
 
     public void showOrderPage(){
-        placeOrder order =new placeOrder();
-//        this.stage.hide();
+        placeOrder order =new placeOrder(this.stage);
+   //     this.stage.hide();
         try {
             order.showWindow();
         } catch (Exception e){
