@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+
+
+<FlowPane xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="5" vgap="5" fx:controller="com.example.caferouge.CreateAccountPageController">
+
+
+    <HBox fx:id="Hfn" prefWidth="400" prefHeight="40">
+        <Label fx:id="firstN" prefWidth="120" prefHeight="40" text="First name：" />
+        <TextField fx:id="fNtext" prefWidth="280" prefHeight="40" />
+    </HBox>
+    <HBox fx:id="Hln" prefWidth="400" prefHeight="40">
+        <Label fx:id="lirstN" prefWidth="120" prefHeight="40" text="Last name：" />
+        <TextField fx:id="lNtext" prefWidth="280" prefHeight="40" />
+    </HBox>
+    <HBox fx:id="HEmail" prefWidth="400" prefHeight="40">
+        <Label fx:id="email" prefWidth="120" prefHeight="40" text="Email：" />
+        <TextField fx:id="emailT" prefWidth="280" prefHeight="40" />
+    </HBox>
+    <HBox fx:id="HGender" prefWidth="400" prefHeight="40">
+        <Label fx:id="gender" prefWidth="120" prefHeight="40" text="Gender：" />
+        <TextField fx:id="genderT" prefWidth="280" prefHeight="40" />
+    </HBox>
+    <HBox fx:id="HUserN" prefWidth="400" prefHeight="40">
+        <Label fx:id="userN" prefWidth="120" prefHeight="40" text="Username：" />
+        <TextField fx:id="userT" prefWidth="280" prefHeight="40" />
+    </HBox>
+    <HBox fx:id="HPwd" prefWidth="400" prefHeight="40">
+        <Label fx:id="pwd" prefWidth="120" prefHeight="40" text="Password：" />
+        <TextField fx:id="pwdT" prefWidth="280" prefHeight="40" />
+    </HBox>
+
+    <Button fx:id="registerBott" onAction="#clickRegisterButton" prefWidth="400" prefHeight="40" text="Register" />
+</FlowPane>
