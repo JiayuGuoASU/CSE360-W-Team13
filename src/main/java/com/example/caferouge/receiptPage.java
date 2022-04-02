@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class placeOrder extends Application {
+public class receiptPage extends Application {
     Stage stage = new Stage();
     public static void main(String[] args) {
         launch(args);
@@ -15,12 +15,12 @@ public class placeOrder extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("placeOrder.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("receipt.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Your Order");
         stage.setScene(scene);
         stage.show();
-        orderController newProjectController = fxmlLoader.getController();
+        receiptController newProjectController = fxmlLoader.getController();
         newProjectController.setStage(stage);
     }
     public void showWindow() throws IOException{
