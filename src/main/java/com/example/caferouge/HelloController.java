@@ -24,7 +24,7 @@ public class HelloController {
             System.out.println(newValue);
         }
     }
-    private Stage stage;
+    private HelloApplication app;
     @FXML
     private Label welcomeText;
     @FXML
@@ -68,13 +68,13 @@ public class HelloController {
             }
         });
     }
-    public void setStage(Stage stage) {
-        this.stage = stage;
+    public void setStage(HelloApplication stage) {
+        this.app = stage;
     }
     @FXML
     public void showDishMenu(){
-        DishDetail dd=new DishDetail(this.stage);
-        this.stage.hide();
+        DishDetail dd=new DishDetail(this.app.stage);
+        this.app.stage.hide();
         try {
 //            (Stage)rootPane.getScene().getWindow()).close();
             dd.showWindow();
@@ -97,5 +97,10 @@ public class HelloController {
             }
         }
         setMenu();
+    }
+    @FXML
+    public void onBackButton(){
+        this.app.parentStage.show();
+        this.app.stage.close();
     }
 }
