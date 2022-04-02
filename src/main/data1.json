@@ -1,0 +1,24 @@
+{
+    "DATABASES": [
+        {
+            "password": "qwertyui",
+            "Id": "1",
+            "tags": "Manager"
+        },
+        {
+            "password": "asdfghjk",
+            "Id": "2",
+            "tags": "Costumer"
+        },
+        {
+            "password": "zxcvbnmm",
+            "Id": "3",
+            "tags": "Costumer"
+        },
+        {
+            "password": "12345678",
+            "Id": "4",
+            "tags": "Customer"
+        }
+    ]
+}

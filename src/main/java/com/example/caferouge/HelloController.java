@@ -1,11 +1,23 @@
 package com.example.caferouge;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseButton;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class HelloController {
-<<<<<<< Updated upstream
-=======
     private class NoticeListItemChangeListener implements ChangeListener<Object> {
         @Override
         public void changed(ObservableValue<? extends Object> observable, Object oldValue, Object newValue) {
@@ -13,16 +25,14 @@ public class HelloController {
         }
     }
 
-    private final Image IMAGE_RUBY = new Image("https://upload.wikimedia.org/wikipedia/commons/f/f1/Ruby_logo_64x64.png");
-    private final Image IMAGE_APPLE = new Image("http://findicons.com/files/icons/832/social_and_web/64/apple.png");
-    private final Image IMAGE_VISTA = new Image("http://antaki.ca/bloom/img/windows_64x64.png");
-    private final Image IMAGE_TWITTER = new Image("http://files.softicons.com/download/social-media-icons/fresh-social-media-icons-by-creative-nerds/png/64x64/twitter-bird.png");
-    private Image[] listOfImages = {IMAGE_RUBY, IMAGE_APPLE, IMAGE_VISTA, IMAGE_TWITTER};
-    private Stage stage;
->>>>>>> Stashed changes
+    private HelloApplication app;
+
     @FXML
     private Label welcomeText;
-
+    @FXML
+    private TextField SERACHTEXT;
+    @FXML
+    private ListView<String> MENU = new ListView<String>();
     @FXML
 
     //TODO login page
@@ -35,5 +45,73 @@ public class HelloController {
         welcomeText.setText("Welcome to JavaFX Application!");
         LoginPage lp = new LoginPage();
         lp.showWindow();
+    }
+    @FXML
+    public void initialize() {
+        setMenu();
+    }
+    public void setMenu(){
+        ObservableList<String> items = FXCollections.observableArrayList ();
+        for (int i=0;i<GlobalData.dishesTemp.size();i++){
+            items.add(GlobalData.dishesTemp.get(i).dishName);
+        }
+
+        MENU.setItems(items);
+        MENU.setCellFactory(param -> new ListCell<String>() {
+            private ImageView imageView = new ImageView();
+            @Override
+            public void updateItem(String name, boolean empty){
+                super.updateItem(name, empty);
+                if (empty) {
+                    setText(null);
+                    setGraphic(null);
+                } else {
+                    imageView.setImage(GlobalData.dishesURL.get(name));
+                    setText(name);
+                    setGraphic(imageView);
+                    setOnMouseClicked(mouseClickedEvent -> {
+                        if (mouseClickedEvent.getButton().equals(MouseButton.PRIMARY) && mouseClickedEvent.getClickCount() == 2) {
+                            showDishMenu();
+                            System.out.println(name);
+                        }
+                    });
+                }
+            }
+        });
+    }
+    public void setStage(HelloApplication stage) {
+        this.app = stage;
+    }
+    @FXML
+    public void showDishMenu(){
+        DishDetail dd=new DishDetail(this.app.stage);
+        this.app.stage.hide();
+        try {
+//            (Stage)rootPane.getScene().getWindow()).close();
+            dd.showWindow();
+        } catch (Exception e){
+
+        }
+    }
+    @FXML
+    public void onSearch(){
+        String searchStr=SERACHTEXT.getText();
+        if (searchStr.compareTo("")==0){
+            GlobalData.dishesTemp=new ArrayList<>(GlobalData.dishes);
+            setMenu();
+            return;
+        }
+        GlobalData.dishesTemp.clear();
+        for (int i=0;i<GlobalData.dishes.size();i++){
+            if (GlobalData.dishes.get(i).dishName.toLowerCase().contains(searchStr.toLowerCase())){
+                GlobalData.dishesTemp.add(GlobalData.dishes.get(i));
+            }
+        }
+        setMenu();
+    }
+    @FXML
+    public void onBackButton(){
+        this.app.parentStage.show();
+        this.app.stage.close();
     }
 }
