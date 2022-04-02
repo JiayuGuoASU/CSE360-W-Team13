@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HelloApplication extends Application {
 
@@ -35,6 +36,7 @@ public class HelloApplication extends Application {
         GlobalData.dishesURL.put("Handmade Noodles",new Image("http://findicons.com/files/icons/832/social_and_web/64/apple.png"));
         GlobalData.dishesURL.put("Sushi",new Image("http://antaki.ca/bloom/img/windows_64x64.png"));
         GlobalData.dishesURL.put("Garlic Butter Salmon",new Image("http://files.softicons.com/download/social-media-icons/fresh-social-media-icons-by-creative-nerds/png/64x64/twitter-bird.png"));
+        GlobalData.dishesTemp=new ArrayList<>(GlobalData.dishes);
         launch();
     }
 }

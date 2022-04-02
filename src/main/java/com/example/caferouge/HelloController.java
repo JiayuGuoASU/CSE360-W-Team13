@@ -8,12 +8,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HelloController {
     private class NoticeListItemChangeListener implements ChangeListener<Object> {
@@ -26,6 +28,8 @@ public class HelloController {
     @FXML
     private Label welcomeText;
     @FXML
+    private TextField SERACHTEXT;
+    @FXML
     private ListView<String> MENU = new ListView<String>();
     @FXML
     protected void onHelloButtonClick() {
@@ -33,9 +37,12 @@ public class HelloController {
     }
     @FXML
     public void initialize() {
+        setMenu();
+    }
+    public void setMenu(){
         ObservableList<String> items = FXCollections.observableArrayList ();
-        for (int i=0;i<GlobalData.dishes.size();i++){
-            items.add(GlobalData.dishes.get(i).dishName);
+        for (int i=0;i<GlobalData.dishesTemp.size();i++){
+            items.add(GlobalData.dishesTemp.get(i).dishName);
         }
 
         MENU.setItems(items);
@@ -60,7 +67,6 @@ public class HelloController {
                 }
             }
         });
-//        MENU.getSelectionModel().selectedItemProperty().addListener(new NoticeListItemChangeListener());
     }
     public void setStage(Stage stage) {
         this.stage = stage;
@@ -75,5 +81,21 @@ public class HelloController {
         } catch (Exception e){
 
         }
+    }
+    @FXML
+    public void onSearch(){
+        String searchStr=SERACHTEXT.getText();
+        if (searchStr.compareTo("")==0){
+            GlobalData.dishesTemp=new ArrayList<>(GlobalData.dishes);
+            setMenu();
+            return;
+        }
+        GlobalData.dishesTemp.clear();
+        for (int i=0;i<GlobalData.dishes.size();i++){
+            if (GlobalData.dishes.get(i).dishName.toLowerCase().contains(searchStr.toLowerCase())){
+                GlobalData.dishesTemp.add(GlobalData.dishes.get(i));
+            }
+        }
+        setMenu();
     }
 }
