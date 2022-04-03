@@ -1,0 +1,56 @@
+{
+    "Dishes": [
+        {
+            "price": 14.70,
+            "name": "Pizza",
+            "description": "NONE",
+            "time": 14,
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ruby_logo_64x64.png"
+        },
+        {
+            "price": 12.00,
+            "name": "Handmade Noodles",
+            "description": "NONE",
+            "time": 12,
+            "url": "http://findicons.com/files/icons/832/social_and_web/64/apple.png"
+        },
+        {
+            "price": 12,
+            "name": "Sushi",
+            "description": "NONE",
+            "time": 12,
+            "url": "http://antaki.ca/bloom/img/windows_64x64.png"
+        },
+        {
+            "price": 12,
+            "name": "Garlic Butter Salmon",
+            "description": "NONE",
+            "time": 12,
+            "url": "http://files.softicons.com/download/social-media-icons/fresh-social-media-icons-by-creative-nerds/png/64x64/twitter-bird.png"
+        },
+        {
+            "price": 0,
+            "name": "NEW",
+            "description": "NEW",
+            "time": 0,
+            "url": "NEW"
+        }
+    ],
+    "Users": [
+        {
+            "username": "Bruce Dong",
+            "password": "qwertyui",
+            "userType": "Customer"
+        },
+        {
+            "username": "Bruce Lee",
+            "password": "asdfghjk",
+            "userType": "Owner"
+        },
+        {
+            "username": "Bruce Wang",
+            "password": "12345678",
+            "userType": "Customer"
+        }
+    ]
+}
