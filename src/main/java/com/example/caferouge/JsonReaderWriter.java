@@ -48,8 +48,8 @@ public class JsonReaderWriter {
         }
     }
     public static void main(String[] args) {
-        String path = JsonReaderWriter.class.getClassLoader().getResource("/main/java/com/example/caferouge/database.json").getPath();
-        String s = JsonReaderWriter.readJsonFile(path);
+        //String path = JsonReaderWriter.class.getClassLoader().getResource("/main/java/com/example/caferouge/database.json").getPath();
+        String s = JsonReaderWriter.readJsonFile("src/main/data_tmp.json");
         JSONObject jobj = JSON.parseObject(s);
         JSONArray dish = jobj.getJSONArray("Dishes");
         JSONObject jobj_new = new JSONObject();
@@ -112,11 +112,9 @@ public class JsonReaderWriter {
 
         // populate the array
         jobj_new.put("Dishes", dish);
-        // System.out.println(JsonReaderWriter.writeJsonFile(jobj_new,
-        // "src/data1.json"));
+        System.out.println(JsonReaderWriter.writeJsonFile(jobj_new, "src/main/database.json"));
         jobj_new.put("Users", user);
-        // System.out.println(JsonReaderWriter.writeJsonFile(jobj_new,
-        // "src/data1.json"));
+        System.out.println(JsonReaderWriter.writeJsonFile(jobj_new, "src/main/database.json"));
 
         // print
         String formatStr = JSON.toJSONString(jobj_new_dish, SerializerFeature.PrettyFormat,
@@ -124,14 +122,6 @@ public class JsonReaderWriter {
                 SerializerFeature.WriteDateUseDateFormat);
         // System.out.println(formatStr);
 
-        JSONObject key = (JSONObject) dish.get(0);
-
-        String Name = (String) key.get("name");
-        Double Price = key.getDouble("price");
-
-        Dish d1=new Dish(Name,Price,14);
-        GlobalData.dishes.add(d1);
-        System.out.println(GlobalData.dishes);
     }
     
 }
