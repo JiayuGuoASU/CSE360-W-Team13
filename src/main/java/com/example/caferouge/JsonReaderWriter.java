@@ -47,6 +47,7 @@ public class JsonReaderWriter {
             return false;
         }
     }
+    /*
     public static void main(String[] args) {
         //String path = JsonReaderWriter.class.getClassLoader().getResource("/main/java/com/example/caferouge/database.json").getPath();
         String s = JsonReaderWriter.readJsonFile("src/main/data_tmp.json");
@@ -123,5 +124,7 @@ public class JsonReaderWriter {
         // System.out.println(formatStr);
 
     }
+
+     */
     
 }
