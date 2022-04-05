@@ -4,6 +4,9 @@
       <root url="jar://$PROJECT_DIR$/src/main/fastjson-1.2.80.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/javafx-sdk-17.0.2" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Downloads/javafx-sdk-17.0.2" recursive="false" type="SOURCES" />
   </library>
 </component>
