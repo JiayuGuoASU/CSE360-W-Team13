@@ -1,1 +1,27 @@
-{"Dishes":[{"price":14.70,"name":"Pizza","description":"NONE","time":14,"url":"https://icons.iconarchive.com/icons/aha-soft/desktop-buffet/64/Pizza-icon.png"},{"price":12.00,"name":"Handmade Noodles","description":"NONE","time":12,"url":"https://icons.iconarchive.com/icons/lemon-liu/recipes/64/recipe-noodles-pasta-icon.png"},{"price":12,"name":"Sushi","description":"NONE","time":12,"url":"https://icons.iconarchive.com/icons/lemon-liu/recipes/64/recipe-sushi-icon.png"},{"price":12,"name":"Garlic Butter Salmon","description":"NONE","time":12,"url":"https://icons.iconarchive.com/icons/sukritact/japanese-food/64/Salmon-Teriyaki-icon.png"},{"price":0.0,"name":"NEW","time":0.0,"url":"https://icons.iconarchive.com/icons/majdi-khawaja/kung-fu-panda/64/Po-3-icon.png"}]}
+{
+  "Users": [
+    {
+      "password": "qwertyui",
+      "userType": "Customer",
+      "username": "Bruce Dong"
+    },
+    {
+      "password": "asdfghjk",
+      "userType": "Owner",
+      "username": "Bruce Lee"
+    },
+    {
+      "password": "12345678",
+      "userType": "Customer",
+      "username": "Bruce Wang"
+    },
+    {
+      "password": "abc",
+      "userType": "user",
+      "username": "abc"
+    },
+    {
+      "$ref": "$.Users[3]"
+    }
+  ]
+}

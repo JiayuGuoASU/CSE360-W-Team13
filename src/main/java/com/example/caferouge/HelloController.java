@@ -9,10 +9,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,7 +23,9 @@ public class HelloController {
             System.out.println(newValue);
         }
     }
+
     private HelloApplication app;
+
     @FXML
     private Label welcomeText;
     @FXML
@@ -32,8 +33,17 @@ public class HelloController {
     @FXML
     private ListView<String> MENU = new ListView<String>();
     @FXML
-    protected void onHelloButtonClick() {
+
+    //TODO login page
+    //protected void loginButtonClick() throws IOException{
+    //        LoginPage lp = new LoginPage();
+    //        lp.showWindow();
+
+    //    }
+    protected void onHelloButtonClick() throws IOException{
         welcomeText.setText("Welcome to JavaFX Application!");
+        LoginPage lp = new LoginPage();
+        lp.showWindow();
     }
     @FXML
     public void initialize() {
