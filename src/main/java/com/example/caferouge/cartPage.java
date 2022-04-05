@@ -9,26 +9,20 @@ import java.io.IOException;
 
 public class cartPage extends Application{
     Stage stage = new Stage();
-    private Stage parentStage;
-    public static void main(String[] args) {
-        launch(args);
-    }
-    public cartPage(Stage parentStage){
-        this.parentStage=parentStage;
-    }
+    public Stage parentStage;
+    public cartPage(Stage parentStage){this.parentStage=parentStage;}
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
-
+    public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("cart.fxml"));
-
         Scene scene = new Scene(fxmlLoader.load(), 420, 660);
-        primaryStage.setTitle("Cart");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        stage.setTitle("Cart");
+        stage.setScene(scene);
+        stage.show();
         cartController newProjectController = fxmlLoader.getController();
         newProjectController.setStage(stage);
     }
+
     public void showWindow() throws IOException{
         start(stage);
     }

@@ -20,7 +20,7 @@ public class MainPage extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainPage.class.getResource("MainPage.fxml"));
 
-//        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+//      Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         Scene scene = new Scene(fxmlLoader.load());
         mystage = stage;
         stage.setTitle("Hello!");
