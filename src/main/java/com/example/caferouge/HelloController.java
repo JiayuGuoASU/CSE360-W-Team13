@@ -42,8 +42,17 @@ public class HelloController {
     //    }
     protected void onHelloButtonClick() throws IOException{
         welcomeText.setText("Welcome to JavaFX Application!");
-        LoginPage lp = new LoginPage();
-        lp.showWindow();
+        showCheckout();
+    }
+
+    public void showCheckout(){
+        cartPage cart =new cartPage(this.app.stage);
+        this.app.stage.hide();
+        try {
+            cart.showWindow();
+        } catch (Exception e){
+
+        }
     }
     @FXML
     public void initialize() {

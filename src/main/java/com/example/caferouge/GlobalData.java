@@ -20,3 +20,4 @@ public class GlobalData {
     static User user;
 
 }
+

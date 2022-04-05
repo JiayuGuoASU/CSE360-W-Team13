@@ -1,0 +1,23 @@
+[
+  {
+      "name":"Pizza",
+      "price":7,
+      "url":"https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg",
+      "desc": "Rich italian flavor of marinara with toppings of your choosing."
+  },
+  {   "name":"Handmade Noodles",
+      "price":7,
+      "url":"https://www.lecremedelacrumb.com/wp-content/uploads/2017/05/kung-pao-noodles-104.jpg",
+      "desc": "Consisting of flavorful spices, sesame seeds, pine nuts, topped with cilantro."
+  }
+  {   "name":"Sushi",
+      "price":6,
+      "url":"https://health.clevelandclinic.org/wp-content/uploads/sites/3/2021/08/sushiSafe-1298575561-770x533-1.jpg",
+      "desc": "Sushi is traditionally made with medium-grain white rice, though it can be prepared with brown rice or short-grain rice."
+  }
+  {   "name":"Garlic Butter Salmon",
+      "price":8,
+      "url":"https://gimmedelicious.com/wp-content/uploads/2021/01/Roasted-Garlic-Butter-Salmon-Sq.jpg",
+      "desc": "Smoked salmon with garlic butter seasoning."
+  }
+]
