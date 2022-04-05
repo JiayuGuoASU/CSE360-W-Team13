@@ -6,7 +6,7 @@ public class Browser extends User{
 
     private Order browOrder;
 
-    public Browser(String name, String pwd, int type,Order border){
+    public Browser(String name, String pwd, String type,Order border){
 
         super(name, pwd, type);
 
