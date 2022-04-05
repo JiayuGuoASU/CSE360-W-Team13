@@ -30,7 +30,7 @@ public class LoginPage extends Application {
     }
 
     public void showWindow() throws IOException{
-        this.parentStage=parentStage;
+//        this.parentStage=parentStage;
         start(stage);
     }
 }

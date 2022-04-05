@@ -61,7 +61,7 @@ public class MainPage extends Application {
         GlobalData.orders.add(oder);
     }
     public void refreshByLogin(){
-        
+
     }
     public static void main(String[] args) {
         String s = JsonReaderWriter.readJsonFile("src/main/data_tmp.json");
