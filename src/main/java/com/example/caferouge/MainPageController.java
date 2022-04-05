@@ -3,6 +3,8 @@ package com.example.caferouge;
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class MainPageController {
     private MainPage app;
     @FXML
@@ -20,7 +22,8 @@ public class MainPageController {
         } catch (Exception e){
         }
     }
-    public void onLoginButton(){
-
+    public void onLoginButton() throws IOException {
+        LoginPage lp = new LoginPage();
+        lp.showWindow();
     }
 }

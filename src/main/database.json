@@ -16,9 +16,9 @@
       "username": "Bruce Wang"
     },
     {
-      "password": "abc",
+      "password": "1111",
       "userType": "user",
-      "username": "abc"
+      "username": "guitang"
     },
     {
       "$ref": "$.Users[3]"
