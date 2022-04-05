@@ -47,7 +47,16 @@ public class JsonReaderWriter {
             return false;
         }
     }
-    /*
+
+
+
+
+
+
+
+
+
+    /*(DELETE at the last step)
     public static void main(String[] args) {
         //String path = JsonReaderWriter.class.getClassLoader().getResource("/main/java/com/example/caferouge/database.json").getPath();
         String s = JsonReaderWriter.readJsonFile("src/main/data_tmp.json");
