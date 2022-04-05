@@ -6,9 +6,9 @@ public class User{
 
     public String username;
     public String password;
-    public int userType;
+    public String userType;
 
-    public User(String name, String pwd, int type){
+    public User(String name, String pwd, String type){
         username = name;
         password = pwd;
         userType = type;
@@ -26,13 +26,13 @@ public class User{
 
     }
 
-    public int getuserType() {
+    public String getuserType() {
 
         return userType;
 
     }
 
-    public void indentificationUserType(int inputType){
+    public void indentificationUserType(String inputType){
 
         userType = inputType;
 

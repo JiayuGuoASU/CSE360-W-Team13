@@ -8,18 +8,22 @@
 <?import javafx.scene.control.PasswordField?>
 
 
-<FlowPane xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="5" vgap="5">
+
+<FlowPane xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="5" vgap="5" fx:controller="com.example.caferouge.LoginController">
 
 
     <HBox fx:id="hbUser" prefWidth="400" prefHeight="40">
         <Label fx:id="labelUser" prefWidth="120" prefHeight="40" text="Username：" />
         <TextField fx:id="fieldUser" prefWidth="280" prefHeight="40" />
     </HBox>
+
     <HBox fx:id="hbPassword" prefWidth="400" prefHeight="40">
-        <Label fx:id="labelPassword" prefWidth="120" prefHeight="40" text="Password：" />
+        <Label fx:id="labelP" prefWidth="120" prefHeight="40" text="Password：" />
         <PasswordField fx:id="fieldPassword" prefWidth="280" prefHeight="40" />
     </HBox>
-    <Button fx:id="btnuserLogin" prefWidth="400" prefHeight="40" text="Login as user" />
-    <Button fx:id="btnadminLogin" prefWidth="400" prefHeight="40" text="Login as Admin" />
-    <Button fx:id="createAccount" prefWidth="400" prefHeight="40" text="Create an account" />
+
+    <Button fx:id="btnuserLogin" prefWidth="400" onAction="#loginAsUserButton" prefHeight="40" text="Login as user" />
+    <Button fx:id="btnadminLogin" prefWidth="400" onAction="#loginAsAdminButton" prefHeight="40" text="Login as Admin" />
+    <Button fx:id="createAccount" prefWidth="400" onAction="#createACC" prefHeight="40" text="Create an account" />
+
 </FlowPane>
