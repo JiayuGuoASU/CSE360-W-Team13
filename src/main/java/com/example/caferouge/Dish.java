@@ -7,15 +7,15 @@ public class Dish {
     public String dishName;
     public double price;
     public double time;
-
-    public Dish(String dishName, double price, double time){
+    public String dishdes;
+    public Dish(String dishName, double price, double time, String des){
 
         this.dishName = dishName;
 
         this.price = price;
 
         this.time = time;
-
+        this.dishdes=des;
     }
 
     public void giveName(String inputName){

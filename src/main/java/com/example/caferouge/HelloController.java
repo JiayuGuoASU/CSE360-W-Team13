@@ -74,6 +74,7 @@ public class HelloController {
     @FXML
     public void showDishMenu(String name){
         DishDetail dd=new DishDetail(this.app.stage, name);
+//        System.out.println("HelloController: "+name);
         this.app.stage.hide();
         try {
 //            (Stage)rootPane.getScene().getWindow()).close();

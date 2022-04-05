@@ -20,6 +20,7 @@ public class DishDetail extends Application {
     public DishDetail(Stage parentStage, String name) {
         this.parentStage = parentStage;
         this.name=name;
+//        System.out.println("Dish Detail Image url: "+this.name);
     }
 
     @Override

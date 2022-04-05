@@ -26,9 +26,9 @@ public class DishDetailController {
     public void initialize() {
 //        dishimage=new ImageView();
 //        Image newImg = new Image(GlobalData.dishesURL.get(this.dishdetail.name));
-        System.out.println("Image url: "+this.dishdetail.name);
+//        System.out.println("Dish Detail Controller Image url: "+this.dishdetail.name);
 //        dishimage.setImage(new Image(GlobalData.dishesURL.get(this.dishdetail.name)));
-        dishimage.setImage(new Image("http://antaki.ca/bloom/img/windows_64x64.png"));
+//        dishimage.setImage(new Image("http://antaki.ca/bloom/img/windows_64x64.png"));
     }
     @FXML
     public void exitApplication(ActionEvent event) {
@@ -41,5 +41,11 @@ public class DishDetailController {
     }
     public void setStage(DishDetail dishdetail) {
         this.dishdetail = dishdetail;
+        dishimage.setImage(new Image(GlobalData.dishesURL.get(this.dishdetail.name)));
+        for (int i=0;i<GlobalData.dishes.size();i++){
+            if (GlobalData.dishes.get(i).dishName.equals(this.dishdetail.name)){
+                dishdsc.setText(GlobalData.dishes.get(i).dishdes);
+            }
+        }
     }
 }
