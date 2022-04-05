@@ -11,7 +11,7 @@ public class Customer extends Browser{
     public LinkedList<Order> orderHistory;
     public LinkedList<Coupons> CouponList;
 
-    public Customer(String name, String pwd, int type, Order browOrder,Contact contact,Payment payment,LinkedList<Order> orderHistory,LinkedList<Coupons> CouponList){
+    public Customer(String name, String pwd, String type, Order browOrder,Contact contact,Payment payment,LinkedList<Order> orderHistory,LinkedList<Coupons> CouponList){
 
         super(name,pwd,type,browOrder);
 

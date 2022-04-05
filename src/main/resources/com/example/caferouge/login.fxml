@@ -16,7 +16,7 @@
         <TextField fx:id="fieldUser" prefWidth="280" prefHeight="40" />
     </HBox>
     <HBox fx:id="hbPassword" prefWidth="400" prefHeight="40">
-        <Label fx:id="labelPassword" prefWidth="120" prefHeight="40" text="Password：" />
+        <Label fx:id="labelP" prefWidth="120" prefHeight="40" text="Password：" />
         <PasswordField fx:id="fieldPassword" prefWidth="280" prefHeight="40" />
     </HBox>
     <Button fx:id="btnuserLogin" prefWidth="400" onAction="#loginAsUserButton" prefHeight="40" text="Login as user" />

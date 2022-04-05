@@ -5,7 +5,7 @@ package com.example.caferouge;
 
 public class Manager extends User{
 
-    public Manager(String name, String pwd, int type){
+    public Manager(String name, String pwd, String type){
         super(name, pwd, type);
 
     }

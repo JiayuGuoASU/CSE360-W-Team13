@@ -38,18 +38,21 @@ public class CreateAccountPageController{
         String s = JsonReaderWriter.readJsonFile("src/main/data_tmp.json");
         JSONObject jobj = JSON.parseObject(s);
         JSONArray user = jobj.getJSONArray("Users");
+        JSONObject jobj_new = new JSONObject();
 
         userT.getText();
 
         JSONObject jobj_new_user = new JSONObject();
         jobj_new_user.put("username", userT.getText());
         jobj_new_user.put("password", pwdT.getText());
-        jobj_new_user.put("userType", "New");
+        jobj_new_user.put("userType", "user");
 
         user.add(jobj_new_user);
         System.out.println("jobj_new_user:" + jobj_new_user);
         user.add(jobj_new_user);
 
+        jobj_new.put("Users", user);
+        System.out.println(JsonReaderWriter.writeJsonFile(jobj_new, "src/main/database.json"));
 
     }
     private Stage stage;
