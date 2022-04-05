@@ -16,6 +16,8 @@ public class Order {
 
     public double orderTime;
 
+    public User user;
+
     public void calculateCookingTime(){
 
         orderTime = 0;
