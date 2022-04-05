@@ -25,8 +25,8 @@ public class cartController  {
 /*
     public void setCart(){
         ObservableList<String> items = FXCollections.observableArrayList ();
-        for (int i=0;i<GlobalData.dishesTemp.size();i++){
-            items.add(GlobalData.dishesTemp.get(i).dishName);
+        for (int i=0;i<GlobalData.orders.size();i++){
+            items.add(GlobalData.orders.get(i).dishName);
         }
 
         CART.setItems(items);
@@ -36,11 +36,8 @@ public class cartController  {
                 super.updateItem(name, empty);
                 if (empty) {
                     setText(null);
-                    setGraphic(null);
                 } else {
-                    imageView.setImage(new Image(GlobalData.dishesURL.get(name)));
                     setText(name);
-                    setGraphic(imageView);
                     setOnMouseClicked(mouseClickedEvent -> {
                         if (mouseClickedEvent.getButton().equals(MouseButton.PRIMARY) && mouseClickedEvent.getClickCount() == 1) {
                             /////////code//
