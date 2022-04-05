@@ -19,7 +19,7 @@
         <Label fx:id="labelPassword" prefWidth="120" prefHeight="40" text="Password：" />
         <PasswordField fx:id="fieldPassword" prefWidth="280" prefHeight="40" />
     </HBox>
-    <Button fx:id="btnuserLogin" prefWidth="400" prefHeight="40" text="Login as user" />
-    <Button fx:id="btnadminLogin" prefWidth="400" prefHeight="40" text="Login as Admin" />
+    <Button fx:id="btnuserLogin" prefWidth="400" onAction="#loginAsUserButton" prefHeight="40" text="Login as user" />
+    <Button fx:id="btnadminLogin" prefWidth="400" onAction="#loginAsAdminButton" prefHeight="40" text="Login as Admin" />
     <Button fx:id="createAccount" prefWidth="400" onAction="#createACC" prefHeight="40" text="Create an account" />
 </FlowPane>
