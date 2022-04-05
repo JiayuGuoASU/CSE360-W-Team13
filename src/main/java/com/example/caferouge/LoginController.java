@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.Locale;
 
 public class LoginController {
-
+    private LoginPage app;
     @FXML
     private Button loginAsUserButton;
     @FXML
@@ -51,6 +51,9 @@ public class LoginController {
             }
         }
         if(isTure) {
+            //TODO 1: close the window
+            //TODO 2: create a new User in GlobalData.user
+            //TODO 3: call this.app.parentStage.refreshByLogin()
             sign_successful si = new sign_successful();
             si.show_window();
         }else {
@@ -93,8 +96,8 @@ public class LoginController {
         cp.show_Create_Account();
     }
     private Stage stage;
-    public void setStage(Stage stage) {
-        this.stage = stage;
+    public void setStage(LoginPage app) {
+        this.app = app;
     }
 
 

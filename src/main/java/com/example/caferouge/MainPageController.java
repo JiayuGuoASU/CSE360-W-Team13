@@ -23,7 +23,7 @@ public class MainPageController {
         }
     }
     public void onLoginButton() throws IOException {
-        LoginPage lp = new LoginPage();
+        LoginPage lp = new LoginPage(this.app.mystage);
         lp.showWindow();
     }
 }

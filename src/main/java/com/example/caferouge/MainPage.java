@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class MainPage extends Application {
     public Stage mystage;
-
+    MainPageController myController;
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainPage.class.getResource("MainPage.fxml"));
@@ -27,6 +27,7 @@ public class MainPage extends Application {
         stage.setScene(scene);
         stage.show();
         MainPageController newProjectController = fxmlLoader.getController();
+        myController=newProjectController;
         newProjectController.setStage(this);
         createMockData();
     }
@@ -58,6 +59,9 @@ public class MainPage extends Application {
         oder.quantityOfDish.add(2);
         oder.calculateCookingTime();
         GlobalData.orders.add(oder);
+    }
+    public void refreshByLogin(){
+        
     }
     public static void main(String[] args) {
         String s = JsonReaderWriter.readJsonFile("src/main/data_tmp.json");
