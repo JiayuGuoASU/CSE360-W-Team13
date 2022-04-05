@@ -48,7 +48,7 @@ public class HelloController {
     }
 
     public void showCheckout(){
-        cartPage cart =new cartPage(this.app.stage);
+        CartPage cart =new CartPage(this.app.stage);
         this.app.stage.hide();
         try {
             cart.showWindow();

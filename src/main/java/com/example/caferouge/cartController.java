@@ -1,21 +1,13 @@
 package com.example.caferouge;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
 
 public class cartController  {
-
-    private cartPage cartPage;
-
+    private CartPage cart;
     @FXML
-    private ListView<String> CART = new ListView();
+    private ListView<String> CART = new ListView<String>();
 
     @FXML protected void checkOut() {
         showOrderPage();
@@ -31,15 +23,14 @@ public class cartController  {
         }
     }
 /*
-    public void setMenu(){
+    public void setCart(){
         ObservableList<String> items = FXCollections.observableArrayList ();
         for (int i=0;i<GlobalData.dishesTemp.size();i++){
             items.add(GlobalData.dishesTemp.get(i).dishName);
         }
 
-        MENU.setItems(items);
-        MENU.setCellFactory(param -> new ListCell<String>() {
-            private ImageView imageView = new ImageView();
+        CART.setItems(items);
+        CART.setCellFactory(param -> new ListCell<String>() {
             @Override
             public void updateItem(String name, boolean empty){
                 super.updateItem(name, empty);
@@ -51,9 +42,8 @@ public class cartController  {
                     setText(name);
                     setGraphic(imageView);
                     setOnMouseClicked(mouseClickedEvent -> {
-                        if (mouseClickedEvent.getButton().equals(MouseButton.PRIMARY) && mouseClickedEvent.getClickCount() == 2) {
-                            showDishMenu(name);
-                            System.out.println(name);
+                        if (mouseClickedEvent.getButton().equals(MouseButton.PRIMARY) && mouseClickedEvent.getClickCount() == 1) {
+                            /////////code//
                         }
                     });
                 }
@@ -62,8 +52,8 @@ public class cartController  {
     }
     */
     @FXML public void backButton(){
-        this.cartPage.parentStage.show();
-        this.cartPage.stage.close();
+        this.cart.parentStage.show();
+        this.cart.stage.close();
     }
 
     private Stage stage;

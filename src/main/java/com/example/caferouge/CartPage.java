@@ -7,15 +7,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class cartPage extends Application{
+public class CartPage extends Application{
     Stage stage = new Stage();
     public Stage parentStage;
-    public cartPage(Stage parentStage){this.parentStage=parentStage;}
-
+    public static void main(String[] args) {
+        launch(args);
+    }
+    public CartPage(Stage parentStage) {this.parentStage=parentStage;}
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("cart.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 420, 660);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Cart");
         stage.setScene(scene);
         stage.show();
