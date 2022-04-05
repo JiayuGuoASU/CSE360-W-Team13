@@ -13,9 +13,9 @@ public class Manager extends User{
     public void giveCoupons(){
 
     }
-    public void addNewItemToMenu(String addName, double addPrice, double addTime){
+    public void addNewItemToMenu(String addName, double addPrice, double addTime, String des){
         
-        Dish dish = new Dish(addName,addPrice,addTime);
+        Dish dish = new Dish(addName,addPrice,addTime, des);
         
         dish.giveName(addName);
         

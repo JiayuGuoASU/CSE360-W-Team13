@@ -28,6 +28,7 @@ public class MainPage extends Application {
         stage.show();
         MainPageController newProjectController = fxmlLoader.getController();
         newProjectController.setStage(this);
+        createMockData();
     }
 
     public static boolean AddDish(String newName, Double newPrice, Double newTime, String newURL) {
@@ -49,7 +50,15 @@ public class MainPage extends Application {
         System.out.println(JsonReaderWriter.writeJsonFile(jobj_new, "src/main/database.json"));
         return true;
     }
-
+    public void createMockData(){
+        Order oder=new Order();
+        oder.dishes.add(GlobalData.dishes.get(0));
+        oder.quantityOfDish.add(1);
+        oder.dishes.add(GlobalData.dishes.get(1));
+        oder.quantityOfDish.add(2);
+        oder.calculateCookingTime();
+        GlobalData.orders.add(oder);
+    }
     public static void main(String[] args) {
         String s = JsonReaderWriter.readJsonFile("src/main/data_tmp.json");
         JSONObject jobj = JSON.parseObject(s);
@@ -66,7 +75,7 @@ public class MainPage extends Application {
             String Description = (String) key.get("description"); //?? if it needs to be added or not
             Double Time = key.getDouble("time");
 
-            Dish d1 = new Dish(Name, Price, Time);
+            Dish d1 = new Dish(Name, Price, Time, Description);
             GlobalData.dishes.add(d1);
             GlobalData.dishesURL.put(Name, URL);
         }
