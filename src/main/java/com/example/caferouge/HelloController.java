@@ -55,12 +55,12 @@ public class HelloController {
                     setText(null);
                     setGraphic(null);
                 } else {
-                    imageView.setImage(GlobalData.dishesURL.get(name));
+                    imageView.setImage(new Image(GlobalData.dishesURL.get(name)));
                     setText(name);
                     setGraphic(imageView);
                     setOnMouseClicked(mouseClickedEvent -> {
                         if (mouseClickedEvent.getButton().equals(MouseButton.PRIMARY) && mouseClickedEvent.getClickCount() == 2) {
-                            showDishMenu();
+                            showDishMenu(name);
                             System.out.println(name);
                         }
                     });
@@ -72,8 +72,8 @@ public class HelloController {
         this.app = stage;
     }
     @FXML
-    public void showDishMenu(){
-        DishDetail dd=new DishDetail(this.app.stage);
+    public void showDishMenu(String name){
+        DishDetail dd=new DishDetail(this.app.stage, name);
         this.app.stage.hide();
         try {
 //            (Stage)rootPane.getScene().getWindow()).close();

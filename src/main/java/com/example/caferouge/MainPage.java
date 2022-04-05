@@ -68,12 +68,11 @@ public class MainPage extends Application {
 
             Dish d1 = new Dish(Name, Price, Time);
             GlobalData.dishes.add(d1);
-            GlobalData.dishesURL.put(Name, new Image(URL));
+            GlobalData.dishesURL.put(Name, URL);
         }
         GlobalData.dishesTemp = new ArrayList<>(GlobalData.dishes);
         launch();
-
-
+        /*
         // User database (unlinked with the system)
         for (int index = 0; index < user.size(); index++) {
             JSONObject key = (JSONObject) user.get(index);
@@ -113,7 +112,7 @@ public class MainPage extends Application {
                 //SerializerFeature.WriteMapNullValue,
                 //SerializerFeature.WriteDateUseDateFormat);
         // System.out.println(formatStr);
-
+        */
     }
 }
 

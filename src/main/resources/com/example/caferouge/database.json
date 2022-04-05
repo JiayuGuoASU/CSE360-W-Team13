@@ -1,0 +1,33 @@
+
+{
+  "Dishes": [
+    {
+      "name": "Pizza",
+      "price": 14.70,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Ruby_logo_64x64.png",
+      "description": "NONE",
+      "time": 14
+    },
+    {
+      "name": "Handmade Noodles",
+      "price": 12.00,
+      "url": "http://findicons.com/files/icons/832/social_and_web/64/apple.png",
+      "description": "NONE",
+      "time": 12
+    },
+    {
+      "name": "Sushi",
+      "price": 12,
+      "url": "http://antaki.ca/bloom/img/windows_64x64.png",
+      "description": "NONE",
+      "time": 12
+    },
+    {
+      "name": "Garlic Butter Salmon",
+      "price": 12,
+      "url": "http://files.softicons.com/download/social-media-icons/fresh-social-media-icons-by-creative-nerds/png/64x64/twitter-bird.png",
+      "description": "NONE",
+      "time": 12
+    }
+  ]
+}
