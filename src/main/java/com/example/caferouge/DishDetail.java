@@ -3,18 +3,25 @@ package com.example.caferouge;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 
 public class DishDetail extends Application {
     Stage stage = new Stage();
     public Stage parentStage;
+    public String name;
     public static void main(String[] args) {
         launch(args);
     }
-    public DishDetail(Stage parentStage){
-        this.parentStage=parentStage;
+
+    public DishDetail(Stage parentStage, String name) {
+        this.parentStage = parentStage;
+        this.name=name;
     }
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("DishDetail.fxml"));
@@ -23,6 +30,17 @@ public class DishDetail extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         primaryStage.setTitle("DishDetail");
         primaryStage.setScene(scene);
+        TextField textField = new TextField();
+        textField.setStyle(
+                "-fx-pref-width: 200;" +
+                        "-fx-pref-height: 50;" +
+                        "-fx-font-size: 20;"
+        );
+        textField.setLayoutX(100);
+        textField.setLayoutY(100);
+
+        Tooltip tip = new Tooltip("xxxxx");
+        textField.setTooltip(tip);
         primaryStage.show();
         primaryStage.setOnCloseRequest(event -> {
             System.out.println("Stage is closing");
@@ -32,7 +50,8 @@ public class DishDetail extends Application {
         DishDetailController newProjectController = fxmlLoader.getController();
         newProjectController.setStage(this);
     }
-    public void showWindow() throws IOException{
+
+    public void showWindow() throws IOException {
         start(stage);
     }
 }
