@@ -12,13 +12,15 @@ import java.io.IOException;
 public class DishDetail extends Application {
     Stage stage = new Stage();
     public Stage parentStage;
-
+    public String name;
     public static void main(String[] args) {
         launch(args);
     }
 
-    public DishDetail(Stage parentStage) {
+    public DishDetail(Stage parentStage, String name) {
         this.parentStage = parentStage;
+        this.name=name;
+//        System.out.println("Dish Detail Image url: "+this.name);
     }
 
     @Override

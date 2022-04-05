@@ -47,19 +47,12 @@ public class JsonReaderWriter {
             return false;
         }
     }
+    static void readDatabase(){
 
-
-
-
-
-
-
-
-
-    /*(DELETE at the last step)
+    }
     public static void main(String[] args) {
-        //String path = JsonReaderWriter.class.getClassLoader().getResource("/main/java/com/example/caferouge/database.json").getPath();
-        String s = JsonReaderWriter.readJsonFile("src/main/data_tmp.json");
+//        String path = JsonReaderWriter.class.getClassLoader().getResource("src/main/resources/com/example/caferouge/database.json").getPath();
+        String s = JsonReaderWriter.readJsonFile("src/main/resources/com/example/caferouge/database.json");
         JSONObject jobj = JSON.parseObject(s);
         JSONArray dish = jobj.getJSONArray("Dishes");
         JSONObject jobj_new = new JSONObject();
@@ -134,6 +127,4 @@ public class JsonReaderWriter {
 
     }
 
-     */
-    
 }
