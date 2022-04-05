@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class GlobalData {
     static ArrayList<Dish> dishes=new ArrayList<Dish>();
-    static Map<String, Image> dishesURL=new HashMap<String, Image>();
+    static Map<String, String> dishesURL=new HashMap<String, String>();
     static ArrayList<Dish> dishesTemp=new ArrayList<Dish>();
 }
+

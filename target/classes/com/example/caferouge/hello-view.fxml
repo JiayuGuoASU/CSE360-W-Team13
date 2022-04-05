@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="503.0" prefWidth="337.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.caferouge.HelloController">
+<VBox alignment="CENTER" prefHeight="503.0" prefWidth="337.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.caferouge.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -16,11 +16,12 @@
       <children>
           <Button layoutX="210.0" layoutY="19.0" onAction="#onHelloButtonClick" text="ADD" />
          <Label layoutX="28.0" layoutY="23.0" text="CAFE ROUGE" />
-         <TextField layoutX="14.0" layoutY="58.0" />
-         <Button layoutX="210.0" layoutY="58.0" onAction="#onHelloButtonClick" text="SEARCH" />
+         <TextField fx:id="SERACHTEXT" layoutX="14.0" layoutY="58.0" />
+         <Button layoutX="210.0" layoutY="58.0" onAction="#onSearch" text="SEARCH" />
       </children>
    </Pane>
 
     <Label fx:id="welcomeText" />
    <ListView fx:id="MENU" prefHeight="200.0" prefWidth="200.0" />
+   <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackButton" text="Back" />
 </VBox>
