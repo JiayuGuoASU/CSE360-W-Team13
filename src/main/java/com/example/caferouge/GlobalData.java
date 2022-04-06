@@ -18,6 +18,10 @@ public class GlobalData {
     //currentOrder.dishes
     //login user=new User();
     static User user;
-
+    static Order currentOrder = new Order();
+    static Order getCurrentOrder(){
+        return currentOrder;
+    }
+    static MainPage mainpage;
 }
 

@@ -10,14 +10,14 @@
         {
             "price": 12.00,
             "name": "Handmade Noodles",
-            "description": "NONE",
+            "description": "Consisting of a flavorful, clear broth,\n shaved beef, tender Chinese\n radish slices, lots of cilantro and\n scallion, deep red chili oil, and\n chewy handmade noodles",
             "time": 12,
             "url": "https://icons.iconarchive.com/icons/lemon-liu/recipes/64/recipe-noodles-pasta-icon.png"
         },
         {
             "price": 12,
             "name": "Sushi",
-            "description": "NONE",
+            "description": "Sushi is traditionally made with \nmedium-grain white rice, though it\n can be prepared with brown rice \nor short-grain rice.",
             "time": 12,
             "url": "https://icons.iconarchive.com/icons/lemon-liu/recipes/64/recipe-sushi-icon.png"
         },

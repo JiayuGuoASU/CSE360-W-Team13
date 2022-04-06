@@ -30,6 +30,7 @@ public class MainPage extends Application {
         myController=newProjectController;
         newProjectController.setStage(this);
         createMockData();
+        GlobalData.mainpage=this;
     }
 
     public static boolean AddDish(String newName, Double newPrice, Double newTime, String newURL) {
