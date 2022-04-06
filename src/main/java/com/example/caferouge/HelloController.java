@@ -43,8 +43,6 @@ public class HelloController {
     protected void onHelloButtonClick() throws IOException{
         welcomeText.setText("Welcome to JavaFX Application!");
         showCheckout();
-        LoginPage lp = new LoginPage();
-        lp.showWindow();
     }
 
     public void showCheckout(){
