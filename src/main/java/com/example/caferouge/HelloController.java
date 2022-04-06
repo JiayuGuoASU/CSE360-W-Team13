@@ -123,4 +123,8 @@ public class HelloController {
         this.app.parentStage.show();
         this.app.stage.close();
     }
+    @FXML
+    public void onCartButton(){
+        showCheckout();
+    }
 }

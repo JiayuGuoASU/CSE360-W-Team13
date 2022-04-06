@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class cartPage extends Application{
     Stage stage = new Stage();
-    private Stage parentStage;
+    public Stage parentStage;
     public static void main(String[] args) {
         launch(args);
     }
@@ -27,7 +27,7 @@ public class cartPage extends Application{
         primaryStage.setScene(scene);
         primaryStage.show();
         cartController newProjectController = fxmlLoader.getController();
-        newProjectController.setStage(stage);
+        newProjectController.setStage(this);
     }
     public void showWindow() throws IOException{
         start(stage);
