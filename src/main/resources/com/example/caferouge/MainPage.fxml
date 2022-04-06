@@ -8,7 +8,7 @@
    <children>
       <Button fx:id="menuButton" layoutX="106.0" layoutY="120.0" mnemonicParsing="false" onAction="#onMenuButton" text="Menu" />
       <Button fx:id="loginButton" layoutX="106.0" layoutY="167.0" mnemonicParsing="false" onAction="#onLoginButton" text="LogIn" />
-      <Button layoutX="102.0" layoutY="216.0" mnemonicParsing="false" text="Logout" />
+      <Button layoutX="102.0" layoutY="216.0" mnemonicParsing="false" onAction="#onLogoutButton" text="Logout" />
       <Label layoutX="98.0" layoutY="53.0" text="CAFE ROUGE" />
    </children>
 </AnchorPane>
