@@ -29,12 +29,9 @@ public class cartController  {
     public void init(){setCart();}
     public void setCart(){
         ObservableList<String> items = FXCollections.observableArrayList ();
-        Order currentOrder = GlobalData.getCurrentOrder();
-        for (int i=0;i<GlobalData.orders.size();i++){
-            for (int j = 0; j < GlobalData.dishes.size()-1; j ++)
-            {
-                items.add(GlobalData.dishes.get(j).dishName);
-            }
+        Order currentOrder = GlobalData.orders.get(GlobalData.orders.size()-1);
+        for (int i=0;i< currentOrder.dishes.size();i++){
+                items.add(GlobalData.dishes.get(i).dishName);
         }
 
 

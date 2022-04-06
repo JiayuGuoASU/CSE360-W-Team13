@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoginPage extends Application {
+
     public Stage parentStage;
     Stage stage = new Stage();
     public static void main(String[] args) {
