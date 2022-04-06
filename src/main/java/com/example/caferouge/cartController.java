@@ -1,5 +1,7 @@
 package com.example.caferouge;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
@@ -22,14 +24,24 @@ public class cartController  {
 
         }
     }
-/*
+
+    @FXML
+    public void init(){setCart();}
     public void setCart(){
         ObservableList<String> items = FXCollections.observableArrayList ();
+        Order currentOrder = GlobalData.getCurrentOrder();
         for (int i=0;i<GlobalData.orders.size();i++){
-            items.add(GlobalData.orders.get(i).dishName);
+            for (int j = 0; j < GlobalData.dishes.size()-1; j ++)
+            {
+                items.add(GlobalData.dishes.get(j).dishName);
+            }
         }
 
+
         CART.setItems(items);
+        }
+
+        /*
         CART.setCellFactory(param -> new ListCell<String>() {
             @Override
             public void updateItem(String name, boolean empty){
