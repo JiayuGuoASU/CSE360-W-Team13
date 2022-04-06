@@ -6,15 +6,17 @@ import java.util.LinkedList;
 
 public class Order {
 
-    public LinkedList<Dish> dishes;
+    public LinkedList<Dish> dishes=new LinkedList<Dish>();
 
-    public LinkedList<Integer> quantityOfDish;
+    public LinkedList<Integer> quantityOfDish=new LinkedList<Integer>();
 
     public double amount;
 
     public double cookingTime;
 
     public double orderTime;
+
+    public User user;
 
     public void calculateCookingTime(){
 

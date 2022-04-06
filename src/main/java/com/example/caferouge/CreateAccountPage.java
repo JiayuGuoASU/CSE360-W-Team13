@@ -19,8 +19,8 @@ public class CreateAccountPage extends Application {
         stage.setTitle("Cafe Rouge!");
         stage.setScene(scene);
         stage.show();
-        LoginController newProjectController = fxmlLoader.getController();
-        newProjectController.setStage(stage);
+//        LoginController newProjectController = fxmlLoader.getController();
+//        newProjectController.setStage(stage);
     }
 
     public void show_Create_Account() throws IOException{
