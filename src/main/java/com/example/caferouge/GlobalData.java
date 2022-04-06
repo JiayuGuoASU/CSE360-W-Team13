@@ -22,5 +22,6 @@ public class GlobalData {
     static Order getCurrentOrder(){
         return currentOrder;
     }
+    static MainPage mainpage;
 }
 

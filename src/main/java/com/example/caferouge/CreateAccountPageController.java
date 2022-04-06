@@ -2,8 +2,7 @@ package com.example.caferouge;
 //CreateAccountPageController
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -53,7 +52,12 @@ public class CreateAccountPageController{
 
         jobj_new.put("Users", user);
         System.out.println(JsonReaderWriter.writeJsonFile(jobj_new, "src/main/database.json"));
-
+        Dialog<String> dialog = new Dialog<String>();
+        dialog.setTitle("Create An account");
+        ButtonType type = new ButtonType("Ok", ButtonBar.ButtonData.OK_DONE);
+        dialog.setContentText("Create account Successfully!");
+        dialog.getDialogPane().getButtonTypes().add(type);
+        dialog.showAndWait();
     }
     private Stage stage;
     public void setStage(Stage stage) {

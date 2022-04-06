@@ -7,10 +7,7 @@ import com.alibaba.fastjson.JSONObject;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
 
@@ -46,6 +43,7 @@ public class LoginController {
             if(Username.equals(s1) && Password.equals(s2)){
                 isTure = true;
                 System.out.println("true");
+                GlobalData.user = new User(Username,Password,userType);
             }else{
                 System.out.println("error");
             }
@@ -54,11 +52,20 @@ public class LoginController {
             //TODO 1: close the window
             //TODO 2: create a new User in GlobalData.user
             //TODO 3: call this.app.parentStage.refreshByLogin()
-            sign_successful si = new sign_successful();
-            si.show_window();
+            Dialog<String> dialog = new Dialog<String>();
+            dialog.setTitle("Login");
+            ButtonType type = new ButtonType("Ok", ButtonBar.ButtonData.OK_DONE);
+            dialog.setContentText("Log in Successfully!");
+            dialog.getDialogPane().getButtonTypes().add(type);
+            dialog.showAndWait();
+            this.app.stage.close();
         }else {
-            sign_failure si = new sign_failure();
-            si.show_window();
+            Dialog<String> dialog = new Dialog<String>();
+            dialog.setTitle("Login");
+            ButtonType type = new ButtonType("Ok", ButtonBar.ButtonData.OK_DONE);
+            dialog.setContentText("Please re-login!");
+            dialog.getDialogPane().getButtonTypes().add(type);
+            dialog.showAndWait();
         }
     }
 

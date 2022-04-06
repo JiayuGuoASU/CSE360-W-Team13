@@ -13,19 +13,24 @@ public class orderController {
     protected void orderPlace() {
         showReceipt();
     }
-
     public void showReceipt(){
-        receiptPage receipt =new receiptPage(this.stage);
-        //       this.stage.hide();
+        GlobalData.currentOrder.user=GlobalData.user;
+        GlobalData.orders.add(GlobalData.currentOrder);
+        receiptPage receipt =new receiptPage(this.app.stage);
+        this.app.stage.close();
         try {
 //            (Stage)rootPane.getScene().getWindow()).close();
             receipt.showWindow();
         } catch (Exception e){
-
         }
     }
     @FXML
-    ListView<String> orderList = new ListView<String>();
+    public void initialize(){
+        setOrders();
+    }
+
+    @FXML
+    private ListView<String> orderList = new ListView<String>();
 
     public void setOrders(){
         ObservableList<String> order = FXCollections.observableArrayList();
@@ -42,21 +47,16 @@ public class orderController {
     }
 
     public void showCartPage(){
-        cartPage backCart =new cartPage(this.stage);
-        //     this.stage.hide();
-        try {
-            backCart.showWindow();
-        } catch (Exception e){
-
-        }
+        this.app.parentStage.show();
+        this.app.stage.close();
     }
     @FXML
     private Button placeOrder;
 
-    private Stage stage;
+    private placeOrder app;
 
-    public void setStage(Stage stage) {
-        this.stage = stage;
+    public void setStage(placeOrder app) {
+        this.app = app;
     }
 
 }

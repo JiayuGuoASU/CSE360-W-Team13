@@ -16,9 +16,9 @@
       "username": "Bruce Wang"
     },
     {
-      "password": "1111",
+      "password": "cse360",
       "userType": "user",
-      "username": "guitang"
+      "username": "cse360"
     },
     {
       "$ref": "$.Users[3]"
