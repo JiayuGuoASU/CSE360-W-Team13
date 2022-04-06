@@ -22,7 +22,7 @@ public class CartPage extends Application{
         stage.setScene(scene);
         stage.show();
         cartController newProjectController = fxmlLoader.getController();
-        newProjectController.setStage(stage);
+        newProjectController.setStage(this);
     }
 
     public void showWindow() throws IOException{

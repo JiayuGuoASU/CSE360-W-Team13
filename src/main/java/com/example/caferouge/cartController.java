@@ -16,7 +16,7 @@ public class cartController  {
     }
 
     public void showOrderPage(){
-        placeOrder order =new placeOrder(this.stage);
+        placeOrder order =new placeOrder(this.app.stage);
    //     this.stage.hide();
         try {
             order.showWindow();
@@ -65,8 +65,18 @@ public class cartController  {
     private Stage stage;
     public void setStage(Stage stage) {
         this.stage = stage;
-    }
 
+    private cartPage app;
+    public void setStage(cartPage app) {
+        this.app = app;
+    }
+    @FXML
+    public void onBack(){
+        System.out.println("Cart Page");
+        this.app.parentStage.show();
+        this.app.stage.close();
+
+    }
 }
 
 

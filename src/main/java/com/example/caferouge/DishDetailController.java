@@ -75,4 +75,5 @@ public class DishDetailController {
             System.out.println("Input String cannot be parsed to Integer.");
         }
     }
+
 }
