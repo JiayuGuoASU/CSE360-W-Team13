@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CSE360-W-Team13" />
+        <module name="360_CloneRepo" />
         <module name="CafeRouge" />
       </profile>
     </annotationProcessing>
